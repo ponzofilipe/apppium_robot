@@ -1,0 +1,1390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0 (Python 3.8.10 on linux)" generated="20220723 17:29:03.212" rpa="false" schemaversion="3">
+<suite id="s1" name="testesCadastrar" source="/home/eric/Cesar/mobile/appium-robot/tests/testesCadastrar.robot">
+<test id="s1-t1" name="Cadastrar pessoa válida" line="10">
+<kw name="Open Session" library="Cadastrar" type="SETUP">
+<msg timestamp="20220723 17:29:03.327" level="TRACE">Arguments: [  ]</msg>
+<kw name="Set Appium Timeout" library="AppiumLibrary">
+<arg>10</arg>
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<msg timestamp="20220723 17:29:03.328" level="TRACE">Arguments: [ '10' ]</msg>
+<msg timestamp="20220723 17:29:03.328" level="TRACE">Return: '5 seconds'</msg>
+<status status="PASS" starttime="20220723 17:29:03.327" endtime="20220723 17:29:03.328"/>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Any</arg>
+<arg>app=${EXECDIR}/apks/app-curso.apk</arg>
+<arg>appPackage=com.example.cursoappium</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<msg timestamp="20220723 17:29:03.328" level="TRACE">Arguments: [ 'http://localhost:4723/wd/hub' | platformName='Android' | deviceName='Any' | app='/home/eric/Cesar/mobile/appium-robot/apks/app-curso.apk' | appPackage='com.example.cursoappium' ]</msg>
+<msg timestamp="20220723 17:29:03.332" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session {"capabilities": {"firstMatch": [{"platformName": "Android", "appium:deviceName": "Any", "appium:app": "/home/eric/Cesar/mobile/appium-robot/apks/app-curso.apk", "appium:appPackage": "com.example.cursoappium"}]}, "desiredCapabilities": {"platformName": "Android", "deviceName": "Any", "app": "/home/eric/Cesar/mobile/appium-robot/apks/app-curso.apk", "appPackage": "com.example.cursoappium"}}</msg>
+<msg timestamp="20220723 17:29:03.333" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:4723</msg>
+<msg timestamp="20220723 17:29:09.373" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session HTTP/1.1" 200 889</msg>
+<msg timestamp="20220723 17:29:09.374" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:09.375" level="DEBUG">Opened application with session id fc14be23-dd86-460a-8edd-96587444f805</msg>
+<msg timestamp="20220723 17:29:09.375" level="TRACE">Return: 1</msg>
+<status status="PASS" starttime="20220723 17:29:03.328" endtime="20220723 17:29:09.376"/>
+</kw>
+<msg timestamp="20220723 17:29:09.376" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:03.327" endtime="20220723 17:29:09.376"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${Name}</var>
+<arg>6</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220723 17:29:09.377" level="TRACE">Arguments: [ 6 ]</msg>
+<msg timestamp="20220723 17:29:09.377" level="TRACE">Return: 'i4m8N9'</msg>
+<msg timestamp="20220723 17:29:09.377" level="INFO">${Name} = i4m8N9</msg>
+<status status="PASS" starttime="20220723 17:29:09.376" endtime="20220723 17:29:09.377"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${Email}</var>
+<arg>${Name}</arg>
+<arg>@test.com</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20220723 17:29:09.378" level="TRACE">Arguments: [ 'i4m8N9' | '@test.com' ]</msg>
+<msg timestamp="20220723 17:29:09.378" level="TRACE">Return: 'i4m8N9 @test.com'</msg>
+<msg timestamp="20220723 17:29:09.378" level="INFO">${Email} = i4m8N9 @test.com</msg>
+<status status="PASS" starttime="20220723 17:29:09.377" endtime="20220723 17:29:09.378"/>
+</kw>
+<kw name="Click CadastrarUsuário" library="Cadastrar">
+<msg timestamp="20220723 17:29:09.379" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>button_cadastrar</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20220723 17:29:09.380" level="TRACE">Arguments: [ 'button_cadastrar' ]</msg>
+<msg timestamp="20220723 17:29:09.380" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:09.901" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:09.901" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:10.102" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:10.133" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:10.133" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:10.334" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:10.357" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:10.357" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:10.558" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:10.587" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:10.587" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:10.788" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:10.810" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:10.810" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:11.011" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:11.032" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:11.032" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:11.233" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:11.252" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:11.252" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:11.453" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:11.468" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:11.469" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:11.669" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:11.691" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:11.691" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:11.892" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:11.917" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:11.918" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:12.118" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:12.151" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:12.152" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:12.352" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:12.369" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:12.369" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:12.570" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:12.588" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:12.589" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:12.790" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:12.809" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:12.809" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:13.010" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:13.030" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:13.030" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:13.230" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:13.245" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:13.246" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:13.447" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:13.470" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:13.470" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:13.671" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:13.689" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:13.689" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:13.890" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:13.910" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:13.910" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:14.111" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:14.161" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:14.161" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:14.362" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:14.800" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:14.800" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:14.800" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:09.379" endtime="20220723 17:29:14.800"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>button_cadastrar</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220723 17:29:14.801" level="TRACE">Arguments: [ 'button_cadastrar' ]</msg>
+<msg timestamp="20220723 17:29:14.802" level="INFO">Clicking element 'button_cadastrar'.</msg>
+<msg timestamp="20220723 17:29:14.802" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:14.821" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:14.822" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:14.822" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/element/00000000-0000-03ff-ffff-ffff00000017/click {"id": "00000000-0000-03ff-ffff-ffff00000017"}</msg>
+<msg timestamp="20220723 17:29:14.879" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/element/00000000-0000-03ff-ffff-ffff00000017/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:29:14.879" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:14.879" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:14.801" endtime="20220723 17:29:14.879"/>
+</kw>
+<msg timestamp="20220723 17:29:14.880" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:09.378" endtime="20220723 17:29:14.880"/>
+</kw>
+<kw name="Input Name Query" library="Cadastrar">
+<arg>${Name}</arg>
+<msg timestamp="20220723 17:29:14.882" level="TRACE">Arguments: [ ${query}='i4m8N9' ]</msg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>TextInputNome</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20220723 17:29:14.882" level="TRACE">Arguments: [ 'TextInputNome' ]</msg>
+<msg timestamp="20220723 17:29:14.883" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "TextInputNome"}</msg>
+<msg timestamp="20220723 17:29:15.217" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:15.217" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:15.417" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "TextInputNome"}</msg>
+<msg timestamp="20220723 17:29:15.763" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:15.764" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:15.764" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:14.882" endtime="20220723 17:29:15.764"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>TextInputNome</arg>
+<arg>${query}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220723 17:29:15.765" level="TRACE">Arguments: [ 'TextInputNome' | 'i4m8N9' ]</msg>
+<msg timestamp="20220723 17:29:15.766" level="INFO">Typing text 'i4m8N9' into text field 'TextInputNome'</msg>
+<msg timestamp="20220723 17:29:15.766" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "TextInputNome"}</msg>
+<msg timestamp="20220723 17:29:16.366" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:16.366" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:16.367" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/element/00000000-0000-0400-ffff-ffff00000034/value {"text": "i4m8N9", "value": ["i", "4", "m", "8", "N", "9"], "id": "00000000-0000-0400-ffff-ffff00000034"}</msg>
+<msg timestamp="20220723 17:29:16.899" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/element/00000000-0000-0400-ffff-ffff00000034/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:29:16.900" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:16.900" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:15.764" endtime="20220723 17:29:16.900"/>
+</kw>
+<msg timestamp="20220723 17:29:16.900" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:14.881" endtime="20220723 17:29:16.900"/>
+</kw>
+<kw name="Input Email Query" library="Cadastrar">
+<arg>${Email}</arg>
+<msg timestamp="20220723 17:29:16.902" level="TRACE">Arguments: [ ${query}='i4m8N9 @test.com' ]</msg>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>TextInputEmail</arg>
+<arg>${query}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220723 17:29:16.902" level="TRACE">Arguments: [ 'TextInputEmail' | 'i4m8N9 @test.com' ]</msg>
+<msg timestamp="20220723 17:29:16.906" level="INFO">Typing text 'i4m8N9 @test.com' into text field 'TextInputEmail'</msg>
+<msg timestamp="20220723 17:29:16.906" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "TextInputEmail"}</msg>
+<msg timestamp="20220723 17:29:17.414" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:17.414" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:17.415" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/element/00000000-0000-0400-ffff-ffff00000040/value {"text": "i4m8N9 @test.com", "value": ["i", "4", "m", "8", "N", "9", " ", "@", "t", "e", "s", "t", ".", "c", "o", "m"], "id": "00000000-0000-0400-ffff-ffff00000040"}</msg>
+<msg timestamp="20220723 17:29:17.970" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/element/00000000-0000-0400-ffff-ffff00000040/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:29:17.970" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:17.970" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:16.902" endtime="20220723 17:29:17.971"/>
+</kw>
+<msg timestamp="20220723 17:29:17.971" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:16.901" endtime="20220723 17:29:17.971"/>
+</kw>
+<kw name="Click Identificação Query" library="Cadastrar">
+<arg>Mulher</arg>
+<msg timestamp="20220723 17:29:17.971" level="TRACE">Arguments: [ ${query}='Mulher' ]</msg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${query}</arg>
+<doc>Click text identified by ``text``.</doc>
+<msg timestamp="20220723 17:29:17.972" level="TRACE">Arguments: [ 'Mulher' ]</msg>
+<msg timestamp="20220723 17:29:17.972" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "xpath", "value": "//*[contains(@text,\"Mulher\")]"}</msg>
+<msg timestamp="20220723 17:29:18.670" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:18.671" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:18.671" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/element/00000000-0000-0400-ffff-ffff0000002d/click {"id": "00000000-0000-0400-ffff-ffff0000002d"}</msg>
+<msg timestamp="20220723 17:29:18.717" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/element/00000000-0000-0400-ffff-ffff0000002d/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:29:18.717" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:18.717" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:17.972" endtime="20220723 17:29:18.717"/>
+</kw>
+<msg timestamp="20220723 17:29:18.718" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:17.971" endtime="20220723 17:29:18.718"/>
+</kw>
+<kw name="Click Estado Query" library="Cadastrar">
+<arg>Alagoas</arg>
+<msg timestamp="20220723 17:29:18.718" level="TRACE">Arguments: [ ${query}='Alagoas' ]</msg>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Acre</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<msg timestamp="20220723 17:29:18.718" level="TRACE">Arguments: [ 'Acre' ]</msg>
+<msg timestamp="20220723 17:29:18.719" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/source {}</msg>
+<msg timestamp="20220723 17:29:18.810" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/source HTTP/1.1" 200 12430</msg>
+<msg timestamp="20220723 17:29:18.810" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:18.810" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:18.718" endtime="20220723 17:29:18.810"/>
+</kw>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>Acre</arg>
+<doc>Click text identified by ``text``.</doc>
+<msg timestamp="20220723 17:29:18.811" level="TRACE">Arguments: [ 'Acre' ]</msg>
+<msg timestamp="20220723 17:29:18.811" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "xpath", "value": "//*[contains(@text,\"Acre\")]"}</msg>
+<msg timestamp="20220723 17:29:19.365" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:19.366" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:19.366" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/element/00000000-0000-0400-ffff-ffff0000004c/click {"id": "00000000-0000-0400-ffff-ffff0000004c"}</msg>
+<msg timestamp="20220723 17:29:19.401" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/element/00000000-0000-0400-ffff-ffff0000004c/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:29:19.402" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:19.402" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:18.810" endtime="20220723 17:29:19.402"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Alagoas</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<msg timestamp="20220723 17:29:19.403" level="TRACE">Arguments: [ 'Alagoas' ]</msg>
+<msg timestamp="20220723 17:29:19.403" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/source {}</msg>
+<msg timestamp="20220723 17:29:19.520" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/source HTTP/1.1" 200 12430</msg>
+<msg timestamp="20220723 17:29:19.521" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:19.721" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/source {}</msg>
+<msg timestamp="20220723 17:29:20.617" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/source HTTP/1.1" 200 6560</msg>
+<msg timestamp="20220723 17:29:20.617" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:20.618" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:19.402" endtime="20220723 17:29:20.618"/>
+</kw>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${query}</arg>
+<doc>Click text identified by ``text``.</doc>
+<msg timestamp="20220723 17:29:20.618" level="TRACE">Arguments: [ 'Alagoas' ]</msg>
+<msg timestamp="20220723 17:29:20.618" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "xpath", "value": "//*[contains(@text,\"Alagoas\")]"}</msg>
+<msg timestamp="20220723 17:29:20.649" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:20.650" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:20.650" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/element/00000000-0000-0401-ffff-ffff00000051/click {"id": "00000000-0000-0401-ffff-ffff00000051"}</msg>
+<msg timestamp="20220723 17:29:21.348" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/element/00000000-0000-0401-ffff-ffff00000051/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:29:21.349" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:21.349" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:20.618" endtime="20220723 17:29:21.349"/>
+</kw>
+<msg timestamp="20220723 17:29:21.349" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:18.718" endtime="20220723 17:29:21.349"/>
+</kw>
+<kw name="Click BotaoCadastrar" library="Cadastrar">
+<msg timestamp="20220723 17:29:21.350" level="TRACE">Arguments: [  ]</msg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>BotaoCadastrar</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220723 17:29:21.350" level="TRACE">Arguments: [ 'BotaoCadastrar' ]</msg>
+<msg timestamp="20220723 17:29:21.352" level="INFO">Clicking element 'BotaoCadastrar'.</msg>
+<msg timestamp="20220723 17:29:21.352" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements {"using": "id", "value": "BotaoCadastrar"}</msg>
+<msg timestamp="20220723 17:29:21.375" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:21.376" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:21.376" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/element/00000000-0000-0400-ffff-ffff00000029/click {"id": "00000000-0000-0400-ffff-ffff00000029"}</msg>
+<msg timestamp="20220723 17:29:21.425" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/element/00000000-0000-0400-ffff-ffff00000029/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:29:21.425" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:21.425" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:21.350" endtime="20220723 17:29:21.425"/>
+</kw>
+<msg timestamp="20220723 17:29:21.425" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:21.349" endtime="20220723 17:29:21.426"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Cadastro realizado com sucesso</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<msg timestamp="20220723 17:29:21.426" level="TRACE">Arguments: [ 'Cadastro realizado com sucesso' ]</msg>
+<msg timestamp="20220723 17:29:21.426" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/source {}</msg>
+<msg timestamp="20220723 17:29:21.501" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/source HTTP/1.1" 200 12420</msg>
+<msg timestamp="20220723 17:29:21.502" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:21.702" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/source {}</msg>
+<msg timestamp="20220723 17:29:22.338" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805/source HTTP/1.1" 200 13763</msg>
+<msg timestamp="20220723 17:29:22.339" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:22.339" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:21.426" endtime="20220723 17:29:22.339"/>
+</kw>
+<kw name="Close Session" library="Cadastrar" type="TEARDOWN">
+<msg timestamp="20220723 17:29:22.339" level="TRACE">Arguments: [  ]</msg>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<msg timestamp="20220723 17:29:22.340" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20220723 17:29:22.341" level="DEBUG">Closing application with session id fc14be23-dd86-460a-8edd-96587444f805</msg>
+<msg timestamp="20220723 17:29:22.341" level="DEBUG">DELETE http://127.0.0.1:4723/wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805 {}</msg>
+<msg timestamp="20220723 17:29:22.624" level="DEBUG">http://127.0.0.1:4723 "DELETE /wd/hub/session/fc14be23-dd86-460a-8edd-96587444f805 HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:29:22.625" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:22.625" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:22.339" endtime="20220723 17:29:22.625"/>
+</kw>
+<msg timestamp="20220723 17:29:22.625" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:22.339" endtime="20220723 17:29:22.625"/>
+</kw>
+<status status="PASS" starttime="20220723 17:29:03.326" endtime="20220723 17:29:22.626"/>
+</test>
+<test id="s1-t2" name="Cadastrar pessoa duplicada" line="25">
+<kw name="Open Session" library="Cadastrar" type="SETUP">
+<msg timestamp="20220723 17:29:22.627" level="TRACE">Arguments: [  ]</msg>
+<kw name="Set Appium Timeout" library="AppiumLibrary">
+<arg>10</arg>
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<msg timestamp="20220723 17:29:22.628" level="TRACE">Arguments: [ '10' ]</msg>
+<msg timestamp="20220723 17:29:22.628" level="TRACE">Return: '10 seconds'</msg>
+<status status="PASS" starttime="20220723 17:29:22.627" endtime="20220723 17:29:22.628"/>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Any</arg>
+<arg>app=${EXECDIR}/apks/app-curso.apk</arg>
+<arg>appPackage=com.example.cursoappium</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<msg timestamp="20220723 17:29:22.629" level="TRACE">Arguments: [ 'http://localhost:4723/wd/hub' | platformName='Android' | deviceName='Any' | app='/home/eric/Cesar/mobile/appium-robot/apks/app-curso.apk' | appPackage='com.example.cursoappium' ]</msg>
+<msg timestamp="20220723 17:29:22.630" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session {"capabilities": {"firstMatch": [{"platformName": "Android", "appium:deviceName": "Any", "appium:app": "/home/eric/Cesar/mobile/appium-robot/apks/app-curso.apk", "appium:appPackage": "com.example.cursoappium"}]}, "desiredCapabilities": {"platformName": "Android", "deviceName": "Any", "app": "/home/eric/Cesar/mobile/appium-robot/apks/app-curso.apk", "appPackage": "com.example.cursoappium"}}</msg>
+<msg timestamp="20220723 17:29:22.631" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:4723</msg>
+<msg timestamp="20220723 17:29:27.371" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session HTTP/1.1" 200 889</msg>
+<msg timestamp="20220723 17:29:27.371" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:27.373" level="DEBUG">Opened application with session id 734eee3a-09aa-45d5-96fa-b168ccf0dba8</msg>
+<msg timestamp="20220723 17:29:27.373" level="TRACE">Return: 2</msg>
+<status status="PASS" starttime="20220723 17:29:22.628" endtime="20220723 17:29:27.373"/>
+</kw>
+<msg timestamp="20220723 17:29:27.373" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:22.627" endtime="20220723 17:29:27.373"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${NomeF}</var>
+<arg>6</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220723 17:29:27.373" level="TRACE">Arguments: [ 6 ]</msg>
+<msg timestamp="20220723 17:29:27.374" level="TRACE">Return: 'W2GSou'</msg>
+<msg timestamp="20220723 17:29:27.374" level="INFO">${NomeF} = W2GSou</msg>
+<status status="PASS" starttime="20220723 17:29:27.373" endtime="20220723 17:29:27.374"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Name}</var>
+<arg>${NomeF}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220723 17:29:27.374" level="TRACE">Arguments: [ 'W2GSou' ]</msg>
+<msg timestamp="20220723 17:29:27.374" level="TRACE">Return: 'W2GSou'</msg>
+<msg timestamp="20220723 17:29:27.374" level="INFO">${Name} = W2GSou</msg>
+<status status="PASS" starttime="20220723 17:29:27.374" endtime="20220723 17:29:27.374"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${Email}</var>
+<arg>${NomeF}</arg>
+<arg>@test.com</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20220723 17:29:27.375" level="TRACE">Arguments: [ 'W2GSou' | '@test.com' ]</msg>
+<msg timestamp="20220723 17:29:27.375" level="TRACE">Return: 'W2GSou @test.com'</msg>
+<msg timestamp="20220723 17:29:27.375" level="INFO">${Email} = W2GSou @test.com</msg>
+<status status="PASS" starttime="20220723 17:29:27.374" endtime="20220723 17:29:27.375"/>
+</kw>
+<kw name="Click CadastrarUsuário" library="Cadastrar">
+<msg timestamp="20220723 17:29:27.376" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>button_cadastrar</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20220723 17:29:27.376" level="TRACE">Arguments: [ 'button_cadastrar' ]</msg>
+<msg timestamp="20220723 17:29:27.377" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:27.868" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:27.869" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:28.069" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:28.105" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:28.105" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:28.306" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:28.338" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:28.338" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:28.539" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:28.560" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:28.560" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:28.760" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:28.780" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:28.781" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:28.981" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:29.000" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:29.000" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:29.201" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:29.221" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:29.221" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:29.422" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:29.439" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:29.439" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:29.640" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:29.663" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:29.663" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:29.864" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:29.881" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:29.882" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:30.082" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:30.100" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:30.101" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:30.301" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:30.321" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:30.322" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:30.522" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:30.543" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:30.543" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:30.744" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:30.764" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:30.765" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:30.966" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:30.987" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:30.987" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:31.187" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:31.208" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:31.208" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:31.409" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:31.424" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:31.425" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:31.625" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:31.644" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:31.644" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:31.844" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:31.858" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:31.858" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:32.059" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:32.170" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:32.170" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:32.370" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:32.858" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:32.859" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:32.859" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:27.376" endtime="20220723 17:29:32.859"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>button_cadastrar</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220723 17:29:32.859" level="TRACE">Arguments: [ 'button_cadastrar' ]</msg>
+<msg timestamp="20220723 17:29:32.861" level="INFO">Clicking element 'button_cadastrar'.</msg>
+<msg timestamp="20220723 17:29:32.861" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:32.878" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:32.878" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:32.879" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/element/00000000-0000-040b-ffff-ffff00000017/click {"id": "00000000-0000-040b-ffff-ffff00000017"}</msg>
+<msg timestamp="20220723 17:29:32.916" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/element/00000000-0000-040b-ffff-ffff00000017/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:29:32.917" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:32.917" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:32.859" endtime="20220723 17:29:32.917"/>
+</kw>
+<msg timestamp="20220723 17:29:32.917" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:27.375" endtime="20220723 17:29:32.918"/>
+</kw>
+<kw name="Input Name Query" library="Cadastrar">
+<arg>${NomeF}</arg>
+<msg timestamp="20220723 17:29:32.919" level="TRACE">Arguments: [ ${query}='W2GSou' ]</msg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>TextInputNome</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20220723 17:29:32.919" level="TRACE">Arguments: [ 'TextInputNome' ]</msg>
+<msg timestamp="20220723 17:29:32.920" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "TextInputNome"}</msg>
+<msg timestamp="20220723 17:29:32.953" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:32.953" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:33.154" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "TextInputNome"}</msg>
+<msg timestamp="20220723 17:29:33.783" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:33.784" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:33.784" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:32.919" endtime="20220723 17:29:33.784"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>TextInputNome</arg>
+<arg>${query}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220723 17:29:33.784" level="TRACE">Arguments: [ 'TextInputNome' | 'W2GSou' ]</msg>
+<msg timestamp="20220723 17:29:33.786" level="INFO">Typing text 'W2GSou' into text field 'TextInputNome'</msg>
+<msg timestamp="20220723 17:29:33.786" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "TextInputNome"}</msg>
+<msg timestamp="20220723 17:29:34.395" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:34.396" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:34.397" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/element/00000000-0000-040c-ffff-ffff00000034/value {"text": "W2GSou", "value": ["W", "2", "G", "S", "o", "u"], "id": "00000000-0000-040c-ffff-ffff00000034"}</msg>
+<msg timestamp="20220723 17:29:34.934" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/element/00000000-0000-040c-ffff-ffff00000034/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:29:34.934" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:34.935" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:33.784" endtime="20220723 17:29:34.935"/>
+</kw>
+<msg timestamp="20220723 17:29:34.935" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:32.918" endtime="20220723 17:29:34.935"/>
+</kw>
+<kw name="Input Email Query" library="Cadastrar">
+<arg>${Email}</arg>
+<msg timestamp="20220723 17:29:34.936" level="TRACE">Arguments: [ ${query}='W2GSou @test.com' ]</msg>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>TextInputEmail</arg>
+<arg>${query}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220723 17:29:34.936" level="TRACE">Arguments: [ 'TextInputEmail' | 'W2GSou @test.com' ]</msg>
+<msg timestamp="20220723 17:29:34.938" level="INFO">Typing text 'W2GSou @test.com' into text field 'TextInputEmail'</msg>
+<msg timestamp="20220723 17:29:34.938" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "TextInputEmail"}</msg>
+<msg timestamp="20220723 17:29:35.446" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:35.447" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:35.447" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/element/00000000-0000-040c-ffff-ffff00000040/value {"text": "W2GSou @test.com", "value": ["W", "2", "G", "S", "o", "u", " ", "@", "t", "e", "s", "t", ".", "c", "o", "m"], "id": "00000000-0000-040c-ffff-ffff00000040"}</msg>
+<msg timestamp="20220723 17:29:35.973" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/element/00000000-0000-040c-ffff-ffff00000040/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:29:35.973" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:35.973" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:34.936" endtime="20220723 17:29:35.973"/>
+</kw>
+<msg timestamp="20220723 17:29:35.974" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:34.935" endtime="20220723 17:29:35.974"/>
+</kw>
+<kw name="Click Identificação Query" library="Cadastrar">
+<arg>Mulher</arg>
+<msg timestamp="20220723 17:29:35.975" level="TRACE">Arguments: [ ${query}='Mulher' ]</msg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${query}</arg>
+<doc>Click text identified by ``text``.</doc>
+<msg timestamp="20220723 17:29:35.975" level="TRACE">Arguments: [ 'Mulher' ]</msg>
+<msg timestamp="20220723 17:29:35.976" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "xpath", "value": "//*[contains(@text,\"Mulher\")]"}</msg>
+<msg timestamp="20220723 17:29:36.214" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:36.214" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:36.214" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/element/00000000-0000-040c-ffff-ffff0000002d/click {"id": "00000000-0000-040c-ffff-ffff0000002d"}</msg>
+<msg timestamp="20220723 17:29:36.503" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/element/00000000-0000-040c-ffff-ffff0000002d/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:29:36.503" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:36.503" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:35.975" endtime="20220723 17:29:36.504"/>
+</kw>
+<msg timestamp="20220723 17:29:36.504" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:35.974" endtime="20220723 17:29:36.504"/>
+</kw>
+<kw name="Click Estado Query" library="Cadastrar">
+<arg>Alagoas</arg>
+<msg timestamp="20220723 17:29:36.507" level="TRACE">Arguments: [ ${query}='Alagoas' ]</msg>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Acre</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<msg timestamp="20220723 17:29:36.507" level="TRACE">Arguments: [ 'Acre' ]</msg>
+<msg timestamp="20220723 17:29:36.508" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/source {}</msg>
+<msg timestamp="20220723 17:29:36.585" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/source HTTP/1.1" 200 12430</msg>
+<msg timestamp="20220723 17:29:36.586" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:36.586" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:36.507" endtime="20220723 17:29:36.586"/>
+</kw>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>Acre</arg>
+<doc>Click text identified by ``text``.</doc>
+<msg timestamp="20220723 17:29:36.587" level="TRACE">Arguments: [ 'Acre' ]</msg>
+<msg timestamp="20220723 17:29:36.587" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "xpath", "value": "//*[contains(@text,\"Acre\")]"}</msg>
+<msg timestamp="20220723 17:29:37.143" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:37.143" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:37.144" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/element/00000000-0000-040c-ffff-ffff0000004c/click {"id": "00000000-0000-040c-ffff-ffff0000004c"}</msg>
+<msg timestamp="20220723 17:29:37.200" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/element/00000000-0000-040c-ffff-ffff0000004c/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:29:37.201" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:37.201" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:36.587" endtime="20220723 17:29:37.202"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Alagoas</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<msg timestamp="20220723 17:29:37.203" level="TRACE">Arguments: [ 'Alagoas' ]</msg>
+<msg timestamp="20220723 17:29:37.203" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/source {}</msg>
+<msg timestamp="20220723 17:29:37.487" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/source HTTP/1.1" 200 12430</msg>
+<msg timestamp="20220723 17:29:37.488" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:37.688" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/source {}</msg>
+<msg timestamp="20220723 17:29:38.268" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/source HTTP/1.1" 200 6560</msg>
+<msg timestamp="20220723 17:29:38.269" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:38.269" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:37.202" endtime="20220723 17:29:38.269"/>
+</kw>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${query}</arg>
+<doc>Click text identified by ``text``.</doc>
+<msg timestamp="20220723 17:29:38.269" level="TRACE">Arguments: [ 'Alagoas' ]</msg>
+<msg timestamp="20220723 17:29:38.270" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "xpath", "value": "//*[contains(@text,\"Alagoas\")]"}</msg>
+<msg timestamp="20220723 17:29:38.311" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:38.311" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:38.312" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/element/00000000-0000-040d-ffff-ffff00000051/click {"id": "00000000-0000-040d-ffff-ffff00000051"}</msg>
+<msg timestamp="20220723 17:29:39.017" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/element/00000000-0000-040d-ffff-ffff00000051/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:29:39.018" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:39.018" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:38.269" endtime="20220723 17:29:39.018"/>
+</kw>
+<msg timestamp="20220723 17:29:39.019" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:36.506" endtime="20220723 17:29:39.019"/>
+</kw>
+<kw name="Click BotaoCadastrar" library="Cadastrar">
+<msg timestamp="20220723 17:29:39.020" level="TRACE">Arguments: [  ]</msg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>BotaoCadastrar</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220723 17:29:39.020" level="TRACE">Arguments: [ 'BotaoCadastrar' ]</msg>
+<msg timestamp="20220723 17:29:39.023" level="INFO">Clicking element 'BotaoCadastrar'.</msg>
+<msg timestamp="20220723 17:29:39.023" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "BotaoCadastrar"}</msg>
+<msg timestamp="20220723 17:29:39.054" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:39.054" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:39.054" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/element/00000000-0000-040c-ffff-ffff00000029/click {"id": "00000000-0000-040c-ffff-ffff00000029"}</msg>
+<msg timestamp="20220723 17:29:39.117" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/element/00000000-0000-040c-ffff-ffff00000029/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:29:39.117" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:39.117" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:39.020" endtime="20220723 17:29:39.117"/>
+</kw>
+<msg timestamp="20220723 17:29:39.118" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:39.019" endtime="20220723 17:29:39.118"/>
+</kw>
+<kw name="Sleep" library="BuiltIn">
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<msg timestamp="20220723 17:29:39.118" level="TRACE">Arguments: [ '5' ]</msg>
+<msg timestamp="20220723 17:29:44.118" level="INFO">Slept 5 seconds</msg>
+<msg timestamp="20220723 17:29:44.118" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:39.118" endtime="20220723 17:29:44.119"/>
+</kw>
+<kw name="Input Name Query" library="Cadastrar">
+<arg>${NomeF}</arg>
+<msg timestamp="20220723 17:29:44.120" level="TRACE">Arguments: [ ${query}='W2GSou' ]</msg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>TextInputNome</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20220723 17:29:44.120" level="TRACE">Arguments: [ 'TextInputNome' ]</msg>
+<msg timestamp="20220723 17:29:44.121" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "TextInputNome"}</msg>
+<msg timestamp="20220723 17:29:44.158" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:44.158" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:44.159" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:44.120" endtime="20220723 17:29:44.159"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>TextInputNome</arg>
+<arg>${query}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220723 17:29:44.160" level="TRACE">Arguments: [ 'TextInputNome' | 'W2GSou' ]</msg>
+<msg timestamp="20220723 17:29:44.161" level="INFO">Typing text 'W2GSou' into text field 'TextInputNome'</msg>
+<msg timestamp="20220723 17:29:44.161" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "TextInputNome"}</msg>
+<msg timestamp="20220723 17:29:44.183" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:44.183" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:44.184" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/element/00000000-0000-040c-ffff-ffff00000034/value {"text": "W2GSou", "value": ["W", "2", "G", "S", "o", "u"], "id": "00000000-0000-040c-ffff-ffff00000034"}</msg>
+<msg timestamp="20220723 17:29:44.722" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/element/00000000-0000-040c-ffff-ffff00000034/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:29:44.723" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:44.723" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:44.159" endtime="20220723 17:29:44.723"/>
+</kw>
+<msg timestamp="20220723 17:29:44.723" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:44.119" endtime="20220723 17:29:44.723"/>
+</kw>
+<kw name="Input Email Query" library="Cadastrar">
+<arg>${Email}</arg>
+<msg timestamp="20220723 17:29:44.724" level="TRACE">Arguments: [ ${query}='W2GSou @test.com' ]</msg>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>TextInputEmail</arg>
+<arg>${query}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220723 17:29:44.725" level="TRACE">Arguments: [ 'TextInputEmail' | 'W2GSou @test.com' ]</msg>
+<msg timestamp="20220723 17:29:44.727" level="INFO">Typing text 'W2GSou @test.com' into text field 'TextInputEmail'</msg>
+<msg timestamp="20220723 17:29:44.727" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "TextInputEmail"}</msg>
+<msg timestamp="20220723 17:29:45.242" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:45.243" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:45.243" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/element/00000000-0000-040c-ffff-ffff00000040/value {"text": "W2GSou @test.com", "value": ["W", "2", "G", "S", "o", "u", " ", "@", "t", "e", "s", "t", ".", "c", "o", "m"], "id": "00000000-0000-040c-ffff-ffff00000040"}</msg>
+<msg timestamp="20220723 17:29:45.767" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/element/00000000-0000-040c-ffff-ffff00000040/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:29:45.768" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:45.768" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:44.725" endtime="20220723 17:29:45.768"/>
+</kw>
+<msg timestamp="20220723 17:29:45.768" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:44.724" endtime="20220723 17:29:45.768"/>
+</kw>
+<kw name="Click BotaoCadastrar" library="Cadastrar">
+<msg timestamp="20220723 17:29:45.769" level="TRACE">Arguments: [  ]</msg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>BotaoCadastrar</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220723 17:29:45.769" level="TRACE">Arguments: [ 'BotaoCadastrar' ]</msg>
+<msg timestamp="20220723 17:29:45.771" level="INFO">Clicking element 'BotaoCadastrar'.</msg>
+<msg timestamp="20220723 17:29:45.772" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements {"using": "id", "value": "BotaoCadastrar"}</msg>
+<msg timestamp="20220723 17:29:46.278" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:46.278" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:46.278" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/element/00000000-0000-040c-ffff-ffff00000029/click {"id": "00000000-0000-040c-ffff-ffff00000029"}</msg>
+<msg timestamp="20220723 17:29:46.324" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/element/00000000-0000-040c-ffff-ffff00000029/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:29:46.324" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:46.325" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:45.769" endtime="20220723 17:29:46.325"/>
+</kw>
+<msg timestamp="20220723 17:29:46.325" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:45.769" endtime="20220723 17:29:46.325"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Email já cadastrado</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<msg timestamp="20220723 17:29:46.326" level="TRACE">Arguments: [ 'Email já cadastrado' ]</msg>
+<msg timestamp="20220723 17:29:46.326" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/source {}</msg>
+<msg timestamp="20220723 17:29:47.219" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8/source HTTP/1.1" 200 13766</msg>
+<msg timestamp="20220723 17:29:47.220" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:47.220" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:46.326" endtime="20220723 17:29:47.220"/>
+</kw>
+<kw name="Close Session" library="Cadastrar" type="TEARDOWN">
+<msg timestamp="20220723 17:29:47.221" level="TRACE">Arguments: [  ]</msg>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<msg timestamp="20220723 17:29:47.221" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20220723 17:29:47.222" level="DEBUG">Closing application with session id 734eee3a-09aa-45d5-96fa-b168ccf0dba8</msg>
+<msg timestamp="20220723 17:29:47.223" level="DEBUG">DELETE http://127.0.0.1:4723/wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8 {}</msg>
+<msg timestamp="20220723 17:29:47.463" level="DEBUG">http://127.0.0.1:4723 "DELETE /wd/hub/session/734eee3a-09aa-45d5-96fa-b168ccf0dba8 HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:29:47.464" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:47.464" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:47.221" endtime="20220723 17:29:47.464"/>
+</kw>
+<msg timestamp="20220723 17:29:47.465" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:47.220" endtime="20220723 17:29:47.465"/>
+</kw>
+<tag>duplicado</tag>
+<status status="PASS" starttime="20220723 17:29:22.626" endtime="20220723 17:29:47.465"/>
+</test>
+<test id="s1-t3" name="Cadastrar com Nome Vazio" line="54">
+<kw name="Open Session" library="Cadastrar" type="SETUP">
+<msg timestamp="20220723 17:29:47.466" level="TRACE">Arguments: [  ]</msg>
+<kw name="Set Appium Timeout" library="AppiumLibrary">
+<arg>10</arg>
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<msg timestamp="20220723 17:29:47.467" level="TRACE">Arguments: [ '10' ]</msg>
+<msg timestamp="20220723 17:29:47.467" level="TRACE">Return: '10 seconds'</msg>
+<status status="PASS" starttime="20220723 17:29:47.467" endtime="20220723 17:29:47.467"/>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Any</arg>
+<arg>app=${EXECDIR}/apks/app-curso.apk</arg>
+<arg>appPackage=com.example.cursoappium</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<msg timestamp="20220723 17:29:47.468" level="TRACE">Arguments: [ 'http://localhost:4723/wd/hub' | platformName='Android' | deviceName='Any' | app='/home/eric/Cesar/mobile/appium-robot/apks/app-curso.apk' | appPackage='com.example.cursoappium' ]</msg>
+<msg timestamp="20220723 17:29:47.469" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session {"capabilities": {"firstMatch": [{"platformName": "Android", "appium:deviceName": "Any", "appium:app": "/home/eric/Cesar/mobile/appium-robot/apks/app-curso.apk", "appium:appPackage": "com.example.cursoappium"}]}, "desiredCapabilities": {"platformName": "Android", "deviceName": "Any", "app": "/home/eric/Cesar/mobile/appium-robot/apks/app-curso.apk", "appPackage": "com.example.cursoappium"}}</msg>
+<msg timestamp="20220723 17:29:47.469" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:4723</msg>
+<msg timestamp="20220723 17:29:53.412" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session HTTP/1.1" 200 889</msg>
+<msg timestamp="20220723 17:29:53.413" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:53.414" level="DEBUG">Opened application with session id 7688d720-53c6-4971-b6fa-f50466bf70d6</msg>
+<msg timestamp="20220723 17:29:53.414" level="TRACE">Return: 3</msg>
+<status status="PASS" starttime="20220723 17:29:47.467" endtime="20220723 17:29:53.414"/>
+</kw>
+<msg timestamp="20220723 17:29:53.414" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:47.466" endtime="20220723 17:29:53.414"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${NomeF}</var>
+<arg>6</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220723 17:29:53.415" level="TRACE">Arguments: [ 6 ]</msg>
+<msg timestamp="20220723 17:29:53.415" level="TRACE">Return: 'bPQzwE'</msg>
+<msg timestamp="20220723 17:29:53.415" level="INFO">${NomeF} = bPQzwE</msg>
+<status status="PASS" starttime="20220723 17:29:53.415" endtime="20220723 17:29:53.415"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Name}</var>
+<arg>${NomeF}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220723 17:29:53.415" level="TRACE">Arguments: [ 'bPQzwE' ]</msg>
+<msg timestamp="20220723 17:29:53.416" level="TRACE">Return: 'bPQzwE'</msg>
+<msg timestamp="20220723 17:29:53.416" level="INFO">${Name} = bPQzwE</msg>
+<status status="PASS" starttime="20220723 17:29:53.415" endtime="20220723 17:29:53.416"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${Email}</var>
+<arg>${NomeF}</arg>
+<arg>@test.com</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20220723 17:29:53.416" level="TRACE">Arguments: [ 'bPQzwE' | '@test.com' ]</msg>
+<msg timestamp="20220723 17:29:53.416" level="TRACE">Return: 'bPQzwE @test.com'</msg>
+<msg timestamp="20220723 17:29:53.416" level="INFO">${Email} = bPQzwE @test.com</msg>
+<status status="PASS" starttime="20220723 17:29:53.416" endtime="20220723 17:29:53.416"/>
+</kw>
+<kw name="Click CadastrarUsuário" library="Cadastrar">
+<msg timestamp="20220723 17:29:53.417" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>button_cadastrar</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20220723 17:29:53.417" level="TRACE">Arguments: [ 'button_cadastrar' ]</msg>
+<msg timestamp="20220723 17:29:53.417" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:53.918" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:53.918" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:54.119" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:54.141" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:54.142" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:54.342" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:54.367" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:54.367" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:54.567" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:54.603" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:54.604" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:54.804" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:54.832" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:54.832" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:55.033" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:55.055" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:55.056" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:55.256" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:55.272" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:55.272" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:55.472" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:55.494" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:55.495" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:55.695" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:55.710" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:55.710" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:55.911" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:55.930" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:55.931" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:56.131" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:56.145" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:56.146" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:56.346" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:56.369" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:56.370" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:56.570" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:56.593" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:56.594" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:56.794" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:56.813" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:56.813" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:57.014" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:57.039" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:57.039" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:57.240" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:57.256" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:57.257" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:57.458" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:57.476" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:57.476" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:57.676" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:57.694" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:57.695" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:57.896" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:57.910" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:57.910" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:58.111" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:58.187" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:29:58.187" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:58.388" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:58.870" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:58.871" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:58.871" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:53.417" endtime="20220723 17:29:58.871"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>button_cadastrar</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220723 17:29:58.871" level="TRACE">Arguments: [ 'button_cadastrar' ]</msg>
+<msg timestamp="20220723 17:29:58.873" level="INFO">Clicking element 'button_cadastrar'.</msg>
+<msg timestamp="20220723 17:29:58.874" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:29:58.897" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:58.898" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:58.898" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/element/00000000-0000-0417-ffff-ffff00000017/click {"id": "00000000-0000-0417-ffff-ffff00000017"}</msg>
+<msg timestamp="20220723 17:29:59.881" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/element/00000000-0000-0417-ffff-ffff00000017/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:29:59.882" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:59.882" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:58.871" endtime="20220723 17:29:59.882"/>
+</kw>
+<msg timestamp="20220723 17:29:59.882" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:53.416" endtime="20220723 17:29:59.882"/>
+</kw>
+<kw name="Input Name Query" library="Cadastrar">
+<arg>${EMPTY}</arg>
+<msg timestamp="20220723 17:29:59.885" level="TRACE">Arguments: [ ${query}='' ]</msg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>TextInputNome</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20220723 17:29:59.886" level="TRACE">Arguments: [ 'TextInputNome' ]</msg>
+<msg timestamp="20220723 17:29:59.886" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "TextInputNome"}</msg>
+<msg timestamp="20220723 17:29:59.936" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:29:59.937" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:29:59.937" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:59.885" endtime="20220723 17:29:59.938"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>TextInputNome</arg>
+<arg>${query}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220723 17:29:59.938" level="TRACE">Arguments: [ 'TextInputNome' | '' ]</msg>
+<msg timestamp="20220723 17:29:59.942" level="INFO">Typing text '' into text field 'TextInputNome'</msg>
+<msg timestamp="20220723 17:29:59.943" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "TextInputNome"}</msg>
+<msg timestamp="20220723 17:30:00.545" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:30:00.546" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:00.546" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/element/00000000-0000-0418-ffff-ffff00000034/value {"text": "", "value": [], "id": "00000000-0000-0418-ffff-ffff00000034"}</msg>
+<msg timestamp="20220723 17:30:01.663" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/element/00000000-0000-0418-ffff-ffff00000034/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:30:01.663" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:01.663" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:59.938" endtime="20220723 17:30:01.663"/>
+</kw>
+<msg timestamp="20220723 17:30:01.664" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:29:59.883" endtime="20220723 17:30:01.664"/>
+</kw>
+<kw name="Input Email Query" library="Cadastrar">
+<arg>${Email}</arg>
+<msg timestamp="20220723 17:30:01.665" level="TRACE">Arguments: [ ${query}='bPQzwE @test.com' ]</msg>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>TextInputEmail</arg>
+<arg>${query}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220723 17:30:01.665" level="TRACE">Arguments: [ 'TextInputEmail' | 'bPQzwE @test.com' ]</msg>
+<msg timestamp="20220723 17:30:01.667" level="INFO">Typing text 'bPQzwE @test.com' into text field 'TextInputEmail'</msg>
+<msg timestamp="20220723 17:30:01.668" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "TextInputEmail"}</msg>
+<msg timestamp="20220723 17:30:02.175" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:30:02.175" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:02.176" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/element/00000000-0000-0418-ffff-ffff00000040/value {"text": "bPQzwE @test.com", "value": ["b", "P", "Q", "z", "w", "E", " ", "@", "t", "e", "s", "t", ".", "c", "o", "m"], "id": "00000000-0000-0418-ffff-ffff00000040"}</msg>
+<msg timestamp="20220723 17:30:02.725" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/element/00000000-0000-0418-ffff-ffff00000040/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:30:02.725" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:02.725" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:01.665" endtime="20220723 17:30:02.725"/>
+</kw>
+<msg timestamp="20220723 17:30:02.725" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:01.664" endtime="20220723 17:30:02.725"/>
+</kw>
+<kw name="Click Identificação Query" library="Cadastrar">
+<arg>Mulher</arg>
+<msg timestamp="20220723 17:30:02.726" level="TRACE">Arguments: [ ${query}='Mulher' ]</msg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${query}</arg>
+<doc>Click text identified by ``text``.</doc>
+<msg timestamp="20220723 17:30:02.726" level="TRACE">Arguments: [ 'Mulher' ]</msg>
+<msg timestamp="20220723 17:30:02.727" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "xpath", "value": "//*[contains(@text,\"Mulher\")]"}</msg>
+<msg timestamp="20220723 17:30:03.424" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:30:03.425" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:03.425" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/element/00000000-0000-0418-ffff-ffff0000002d/click {"id": "00000000-0000-0418-ffff-ffff0000002d"}</msg>
+<msg timestamp="20220723 17:30:03.488" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/element/00000000-0000-0418-ffff-ffff0000002d/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:30:03.489" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:03.489" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:02.726" endtime="20220723 17:30:03.489"/>
+</kw>
+<msg timestamp="20220723 17:30:03.489" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:02.726" endtime="20220723 17:30:03.489"/>
+</kw>
+<kw name="Click Estado Query" library="Cadastrar">
+<arg>Alagoas</arg>
+<msg timestamp="20220723 17:30:03.490" level="TRACE">Arguments: [ ${query}='Alagoas' ]</msg>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Acre</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<msg timestamp="20220723 17:30:03.490" level="TRACE">Arguments: [ 'Acre' ]</msg>
+<msg timestamp="20220723 17:30:03.491" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/source {}</msg>
+<msg timestamp="20220723 17:30:04.116" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/source HTTP/1.1" 200 12428</msg>
+<msg timestamp="20220723 17:30:04.117" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:04.117" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:03.490" endtime="20220723 17:30:04.117"/>
+</kw>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>Acre</arg>
+<doc>Click text identified by ``text``.</doc>
+<msg timestamp="20220723 17:30:04.118" level="TRACE">Arguments: [ 'Acre' ]</msg>
+<msg timestamp="20220723 17:30:04.118" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "xpath", "value": "//*[contains(@text,\"Acre\")]"}</msg>
+<msg timestamp="20220723 17:30:04.159" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:30:04.160" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:04.160" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/element/00000000-0000-0418-ffff-ffff0000004c/click {"id": "00000000-0000-0418-ffff-ffff0000004c"}</msg>
+<msg timestamp="20220723 17:30:04.218" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/element/00000000-0000-0418-ffff-ffff0000004c/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:30:04.218" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:04.218" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:04.118" endtime="20220723 17:30:04.219"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Alagoas</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<msg timestamp="20220723 17:30:04.219" level="TRACE">Arguments: [ 'Alagoas' ]</msg>
+<msg timestamp="20220723 17:30:04.220" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/source {}</msg>
+<msg timestamp="20220723 17:30:05.254" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/source HTTP/1.1" 200 6560</msg>
+<msg timestamp="20220723 17:30:05.254" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:05.255" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:04.219" endtime="20220723 17:30:05.255"/>
+</kw>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${query}</arg>
+<doc>Click text identified by ``text``.</doc>
+<msg timestamp="20220723 17:30:05.256" level="TRACE">Arguments: [ 'Alagoas' ]</msg>
+<msg timestamp="20220723 17:30:05.256" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "xpath", "value": "//*[contains(@text,\"Alagoas\")]"}</msg>
+<msg timestamp="20220723 17:30:05.292" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:30:05.292" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:05.292" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/element/00000000-0000-0419-ffff-ffff00000051/click {"id": "00000000-0000-0419-ffff-ffff00000051"}</msg>
+<msg timestamp="20220723 17:30:06.000" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/element/00000000-0000-0419-ffff-ffff00000051/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:30:06.001" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:06.001" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:05.255" endtime="20220723 17:30:06.002"/>
+</kw>
+<msg timestamp="20220723 17:30:06.002" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:03.489" endtime="20220723 17:30:06.002"/>
+</kw>
+<kw name="Click BotaoCadastrar" library="Cadastrar">
+<msg timestamp="20220723 17:30:06.003" level="TRACE">Arguments: [  ]</msg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>BotaoCadastrar</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220723 17:30:06.004" level="TRACE">Arguments: [ 'BotaoCadastrar' ]</msg>
+<msg timestamp="20220723 17:30:06.008" level="INFO">Clicking element 'BotaoCadastrar'.</msg>
+<msg timestamp="20220723 17:30:06.008" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements {"using": "id", "value": "BotaoCadastrar"}</msg>
+<msg timestamp="20220723 17:30:06.050" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:30:06.051" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:06.051" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/element/00000000-0000-0418-ffff-ffff00000029/click {"id": "00000000-0000-0418-ffff-ffff00000029"}</msg>
+<msg timestamp="20220723 17:30:06.869" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/element/00000000-0000-0418-ffff-ffff00000029/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:30:06.870" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:06.871" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:06.004" endtime="20220723 17:30:06.871"/>
+</kw>
+<msg timestamp="20220723 17:30:06.871" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:06.003" endtime="20220723 17:30:06.872"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Insira o nome completo</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<msg timestamp="20220723 17:30:06.872" level="TRACE">Arguments: [ 'Insira o nome completo' ]</msg>
+<msg timestamp="20220723 17:30:06.873" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/source {}</msg>
+<msg timestamp="20220723 17:30:06.924" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6/source HTTP/1.1" 200 13784</msg>
+<msg timestamp="20220723 17:30:06.925" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:06.925" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:06.872" endtime="20220723 17:30:06.925"/>
+</kw>
+<kw name="Close Session" library="Cadastrar" type="TEARDOWN">
+<msg timestamp="20220723 17:30:06.926" level="TRACE">Arguments: [  ]</msg>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<msg timestamp="20220723 17:30:06.927" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20220723 17:30:06.928" level="DEBUG">Closing application with session id 7688d720-53c6-4971-b6fa-f50466bf70d6</msg>
+<msg timestamp="20220723 17:30:06.928" level="DEBUG">DELETE http://127.0.0.1:4723/wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6 {}</msg>
+<msg timestamp="20220723 17:30:07.195" level="DEBUG">http://127.0.0.1:4723 "DELETE /wd/hub/session/7688d720-53c6-4971-b6fa-f50466bf70d6 HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:30:07.196" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:07.196" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:06.926" endtime="20220723 17:30:07.196"/>
+</kw>
+<msg timestamp="20220723 17:30:07.196" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:06.926" endtime="20220723 17:30:07.196"/>
+</kw>
+<tag>nomeVazio</tag>
+<status status="PASS" starttime="20220723 17:29:47.465" endtime="20220723 17:30:07.196"/>
+</test>
+<test id="s1-t4" name="Cadastrar com Email Vazio" line="69">
+<kw name="Open Session" library="Cadastrar" type="SETUP">
+<msg timestamp="20220723 17:30:07.198" level="TRACE">Arguments: [  ]</msg>
+<kw name="Set Appium Timeout" library="AppiumLibrary">
+<arg>10</arg>
+<doc>Sets the timeout in seconds used by various keywords.</doc>
+<msg timestamp="20220723 17:30:07.198" level="TRACE">Arguments: [ '10' ]</msg>
+<msg timestamp="20220723 17:30:07.198" level="TRACE">Return: '10 seconds'</msg>
+<status status="PASS" starttime="20220723 17:30:07.198" endtime="20220723 17:30:07.198"/>
+</kw>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>http://localhost:4723/wd/hub</arg>
+<arg>platformName=Android</arg>
+<arg>deviceName=Any</arg>
+<arg>app=${EXECDIR}/apks/app-curso.apk</arg>
+<arg>appPackage=com.example.cursoappium</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<msg timestamp="20220723 17:30:07.199" level="TRACE">Arguments: [ 'http://localhost:4723/wd/hub' | platformName='Android' | deviceName='Any' | app='/home/eric/Cesar/mobile/appium-robot/apks/app-curso.apk' | appPackage='com.example.cursoappium' ]</msg>
+<msg timestamp="20220723 17:30:07.200" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session {"capabilities": {"firstMatch": [{"platformName": "Android", "appium:deviceName": "Any", "appium:app": "/home/eric/Cesar/mobile/appium-robot/apks/app-curso.apk", "appium:appPackage": "com.example.cursoappium"}]}, "desiredCapabilities": {"platformName": "Android", "deviceName": "Any", "app": "/home/eric/Cesar/mobile/appium-robot/apks/app-curso.apk", "appPackage": "com.example.cursoappium"}}</msg>
+<msg timestamp="20220723 17:30:07.200" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:4723</msg>
+<msg timestamp="20220723 17:30:12.017" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session HTTP/1.1" 200 889</msg>
+<msg timestamp="20220723 17:30:12.018" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:12.019" level="DEBUG">Opened application with session id d507d10c-d48d-4956-9f36-c7348fe79025</msg>
+<msg timestamp="20220723 17:30:12.019" level="TRACE">Return: 4</msg>
+<status status="PASS" starttime="20220723 17:30:07.198" endtime="20220723 17:30:12.019"/>
+</kw>
+<msg timestamp="20220723 17:30:12.019" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:07.197" endtime="20220723 17:30:12.019"/>
+</kw>
+<kw name="Generate Random String" library="String">
+<var>${NomeF}</var>
+<arg>6</arg>
+<doc>Generates a string with a desired ``length`` from the given ``chars``.</doc>
+<msg timestamp="20220723 17:30:12.020" level="TRACE">Arguments: [ 6 ]</msg>
+<msg timestamp="20220723 17:30:12.020" level="TRACE">Return: '4UUnQc'</msg>
+<msg timestamp="20220723 17:30:12.020" level="INFO">${NomeF} = 4UUnQc</msg>
+<status status="PASS" starttime="20220723 17:30:12.020" endtime="20220723 17:30:12.020"/>
+</kw>
+<kw name="Set Variable" library="BuiltIn">
+<var>${Name}</var>
+<arg>${NomeF}</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<msg timestamp="20220723 17:30:12.021" level="TRACE">Arguments: [ '4UUnQc' ]</msg>
+<msg timestamp="20220723 17:30:12.021" level="TRACE">Return: '4UUnQc'</msg>
+<msg timestamp="20220723 17:30:12.021" level="INFO">${Name} = 4UUnQc</msg>
+<status status="PASS" starttime="20220723 17:30:12.021" endtime="20220723 17:30:12.022"/>
+</kw>
+<kw name="Catenate" library="BuiltIn">
+<var>${Email}</var>
+<arg>${NomeF}</arg>
+<arg>@test.com</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20220723 17:30:12.022" level="TRACE">Arguments: [ '4UUnQc' | '@test.com' ]</msg>
+<msg timestamp="20220723 17:30:12.023" level="TRACE">Return: '4UUnQc @test.com'</msg>
+<msg timestamp="20220723 17:30:12.023" level="INFO">${Email} = 4UUnQc @test.com</msg>
+<status status="PASS" starttime="20220723 17:30:12.022" endtime="20220723 17:30:12.023"/>
+</kw>
+<kw name="Click CadastrarUsuário" library="Cadastrar">
+<msg timestamp="20220723 17:30:12.024" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>button_cadastrar</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20220723 17:30:12.024" level="TRACE">Arguments: [ 'button_cadastrar' ]</msg>
+<msg timestamp="20220723 17:30:12.025" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:12.530" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:12.531" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:12.731" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:12.757" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:12.758" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:12.958" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:12.977" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:12.977" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:13.178" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:13.199" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:13.200" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:13.401" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:13.424" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:13.424" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:13.624" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:13.646" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:13.647" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:13.847" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:13.867" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:13.867" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:14.068" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:14.091" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:14.091" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:14.292" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:14.308" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:14.309" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:14.509" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:14.529" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:14.529" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:14.730" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:14.745" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:14.746" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:14.946" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:14.969" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:14.969" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:15.169" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:15.189" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:15.189" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:15.390" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:15.405" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:15.406" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:15.606" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:15.625" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:15.625" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:15.825" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:15.842" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:15.843" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:16.043" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:16.062" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:16.063" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:16.263" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:16.278" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:16.278" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:16.479" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:16.497" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:16.498" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:16.698" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:16.759" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:16.759" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:16.960" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:17.517" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:30:17.517" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:17.517" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:12.024" endtime="20220723 17:30:17.518"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>button_cadastrar</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220723 17:30:17.518" level="TRACE">Arguments: [ 'button_cadastrar' ]</msg>
+<msg timestamp="20220723 17:30:17.520" level="INFO">Clicking element 'button_cadastrar'.</msg>
+<msg timestamp="20220723 17:30:17.520" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "button_cadastrar"}</msg>
+<msg timestamp="20220723 17:30:17.542" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:30:17.543" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:17.543" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/element/00000000-0000-0423-ffff-ffff00000017/click {"id": "00000000-0000-0423-ffff-ffff00000017"}</msg>
+<msg timestamp="20220723 17:30:17.603" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/element/00000000-0000-0423-ffff-ffff00000017/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:30:17.604" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:17.604" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:17.518" endtime="20220723 17:30:17.604"/>
+</kw>
+<msg timestamp="20220723 17:30:17.604" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:12.023" endtime="20220723 17:30:17.604"/>
+</kw>
+<kw name="Input Name Query" library="Cadastrar">
+<arg>${NomeF}</arg>
+<msg timestamp="20220723 17:30:17.605" level="TRACE">Arguments: [ ${query}='4UUnQc' ]</msg>
+<kw name="Wait Until Page Contains Element" library="AppiumLibrary">
+<arg>TextInputNome</arg>
+<doc>Waits until element specified with `locator` appears on current page.</doc>
+<msg timestamp="20220723 17:30:17.606" level="TRACE">Arguments: [ 'TextInputNome' ]</msg>
+<msg timestamp="20220723 17:30:17.606" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "TextInputNome"}</msg>
+<msg timestamp="20220723 17:30:17.917" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20220723 17:30:17.917" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:18.118" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "TextInputNome"}</msg>
+<msg timestamp="20220723 17:30:18.485" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:30:18.486" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:18.486" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:17.605" endtime="20220723 17:30:18.486"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>TextInputNome</arg>
+<arg>${query}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220723 17:30:18.486" level="TRACE">Arguments: [ 'TextInputNome' | '4UUnQc' ]</msg>
+<msg timestamp="20220723 17:30:18.487" level="INFO">Typing text '4UUnQc' into text field 'TextInputNome'</msg>
+<msg timestamp="20220723 17:30:18.487" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "TextInputNome"}</msg>
+<msg timestamp="20220723 17:30:19.087" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:30:19.088" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:19.088" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/element/00000000-0000-0424-ffff-ffff00000034/value {"text": "4UUnQc", "value": ["4", "U", "U", "n", "Q", "c"], "id": "00000000-0000-0424-ffff-ffff00000034"}</msg>
+<msg timestamp="20220723 17:30:19.638" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/element/00000000-0000-0424-ffff-ffff00000034/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:30:19.639" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:19.639" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:18.486" endtime="20220723 17:30:19.639"/>
+</kw>
+<msg timestamp="20220723 17:30:19.639" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:17.605" endtime="20220723 17:30:19.640"/>
+</kw>
+<kw name="Input Email Query" library="Cadastrar">
+<arg>${EMPTY}</arg>
+<msg timestamp="20220723 17:30:19.641" level="TRACE">Arguments: [ ${query}='' ]</msg>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>TextInputEmail</arg>
+<arg>${query}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20220723 17:30:19.642" level="TRACE">Arguments: [ 'TextInputEmail' | '' ]</msg>
+<msg timestamp="20220723 17:30:19.644" level="INFO">Typing text '' into text field 'TextInputEmail'</msg>
+<msg timestamp="20220723 17:30:19.644" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "TextInputEmail"}</msg>
+<msg timestamp="20220723 17:30:20.145" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:30:20.146" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:20.146" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/element/00000000-0000-0424-ffff-ffff00000040/value {"text": "", "value": [], "id": "00000000-0000-0424-ffff-ffff00000040"}</msg>
+<msg timestamp="20220723 17:30:20.699" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/element/00000000-0000-0424-ffff-ffff00000040/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:30:20.700" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:20.700" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:19.641" endtime="20220723 17:30:20.701"/>
+</kw>
+<msg timestamp="20220723 17:30:20.701" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:19.640" endtime="20220723 17:30:20.701"/>
+</kw>
+<kw name="Click Identificação Query" library="Cadastrar">
+<arg>Mulher</arg>
+<msg timestamp="20220723 17:30:20.703" level="TRACE">Arguments: [ ${query}='Mulher' ]</msg>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${query}</arg>
+<doc>Click text identified by ``text``.</doc>
+<msg timestamp="20220723 17:30:20.704" level="TRACE">Arguments: [ 'Mulher' ]</msg>
+<msg timestamp="20220723 17:30:20.705" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "xpath", "value": "//*[contains(@text,\"Mulher\")]"}</msg>
+<msg timestamp="20220723 17:30:21.445" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:30:21.445" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:21.446" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/element/00000000-0000-0424-ffff-ffff0000002d/click {"id": "00000000-0000-0424-ffff-ffff0000002d"}</msg>
+<msg timestamp="20220723 17:30:21.529" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/element/00000000-0000-0424-ffff-ffff0000002d/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:30:21.530" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:21.530" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:20.704" endtime="20220723 17:30:21.530"/>
+</kw>
+<msg timestamp="20220723 17:30:21.530" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:20.702" endtime="20220723 17:30:21.530"/>
+</kw>
+<kw name="Click Estado Query" library="Cadastrar">
+<arg>Alagoas</arg>
+<msg timestamp="20220723 17:30:21.531" level="TRACE">Arguments: [ ${query}='Alagoas' ]</msg>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Acre</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<msg timestamp="20220723 17:30:21.531" level="TRACE">Arguments: [ 'Acre' ]</msg>
+<msg timestamp="20220723 17:30:21.531" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/source {}</msg>
+<msg timestamp="20220723 17:30:22.155" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/source HTTP/1.1" 200 12419</msg>
+<msg timestamp="20220723 17:30:22.155" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:22.156" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:21.531" endtime="20220723 17:30:22.156"/>
+</kw>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>Acre</arg>
+<doc>Click text identified by ``text``.</doc>
+<msg timestamp="20220723 17:30:22.156" level="TRACE">Arguments: [ 'Acre' ]</msg>
+<msg timestamp="20220723 17:30:22.157" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "xpath", "value": "//*[contains(@text,\"Acre\")]"}</msg>
+<msg timestamp="20220723 17:30:22.206" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:30:22.207" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:22.207" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/element/00000000-0000-0424-ffff-ffff0000004c/click {"id": "00000000-0000-0424-ffff-ffff0000004c"}</msg>
+<msg timestamp="20220723 17:30:22.269" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/element/00000000-0000-0424-ffff-ffff0000004c/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:30:22.270" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:22.270" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:22.156" endtime="20220723 17:30:22.270"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Alagoas</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<msg timestamp="20220723 17:30:22.271" level="TRACE">Arguments: [ 'Alagoas' ]</msg>
+<msg timestamp="20220723 17:30:22.271" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/source {}</msg>
+<msg timestamp="20220723 17:30:23.343" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/source HTTP/1.1" 200 6560</msg>
+<msg timestamp="20220723 17:30:23.343" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:23.344" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:22.270" endtime="20220723 17:30:23.344"/>
+</kw>
+<kw name="Click Text" library="AppiumLibrary">
+<arg>${query}</arg>
+<doc>Click text identified by ``text``.</doc>
+<msg timestamp="20220723 17:30:23.344" level="TRACE">Arguments: [ 'Alagoas' ]</msg>
+<msg timestamp="20220723 17:30:23.344" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "xpath", "value": "//*[contains(@text,\"Alagoas\")]"}</msg>
+<msg timestamp="20220723 17:30:23.378" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:30:23.378" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:23.378" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/element/00000000-0000-0425-ffff-ffff00000051/click {"id": "00000000-0000-0425-ffff-ffff00000051"}</msg>
+<msg timestamp="20220723 17:30:24.058" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/element/00000000-0000-0425-ffff-ffff00000051/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:30:24.059" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:24.059" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:23.344" endtime="20220723 17:30:24.059"/>
+</kw>
+<msg timestamp="20220723 17:30:24.060" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:21.530" endtime="20220723 17:30:24.060"/>
+</kw>
+<kw name="Click BotaoCadastrar" library="Cadastrar">
+<msg timestamp="20220723 17:30:24.061" level="TRACE">Arguments: [  ]</msg>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>BotaoCadastrar</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20220723 17:30:24.061" level="TRACE">Arguments: [ 'BotaoCadastrar' ]</msg>
+<msg timestamp="20220723 17:30:24.063" level="INFO">Clicking element 'BotaoCadastrar'.</msg>
+<msg timestamp="20220723 17:30:24.063" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements {"using": "id", "value": "BotaoCadastrar"}</msg>
+<msg timestamp="20220723 17:30:24.093" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20220723 17:30:24.094" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:24.094" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/element/00000000-0000-0424-ffff-ffff00000029/click {"id": "00000000-0000-0424-ffff-ffff00000029"}</msg>
+<msg timestamp="20220723 17:30:24.891" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/element/00000000-0000-0424-ffff-ffff00000029/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:30:24.892" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:24.892" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:24.061" endtime="20220723 17:30:24.892"/>
+</kw>
+<msg timestamp="20220723 17:30:24.893" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:24.060" endtime="20220723 17:30:24.893"/>
+</kw>
+<kw name="Wait Until Page Contains" library="AppiumLibrary">
+<arg>Insira um email válido</arg>
+<doc>Waits until `text` appears on current page.</doc>
+<msg timestamp="20220723 17:30:24.894" level="TRACE">Arguments: [ 'Insira um email válido' ]</msg>
+<msg timestamp="20220723 17:30:24.895" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/source {}</msg>
+<msg timestamp="20220723 17:30:24.947" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025/source HTTP/1.1" 200 13776</msg>
+<msg timestamp="20220723 17:30:24.948" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:24.949" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:24.894" endtime="20220723 17:30:24.949"/>
+</kw>
+<kw name="Close Session" library="Cadastrar" type="TEARDOWN">
+<msg timestamp="20220723 17:30:24.950" level="TRACE">Arguments: [  ]</msg>
+<kw name="Close Application" library="AppiumLibrary">
+<doc>Closes the current application and also close webdriver session.</doc>
+<msg timestamp="20220723 17:30:24.950" level="TRACE">Arguments: [  ]</msg>
+<msg timestamp="20220723 17:30:24.951" level="DEBUG">Closing application with session id d507d10c-d48d-4956-9f36-c7348fe79025</msg>
+<msg timestamp="20220723 17:30:24.952" level="DEBUG">DELETE http://127.0.0.1:4723/wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025 {}</msg>
+<msg timestamp="20220723 17:30:25.250" level="DEBUG">http://127.0.0.1:4723 "DELETE /wd/hub/session/d507d10c-d48d-4956-9f36-c7348fe79025 HTTP/1.1" 200 14</msg>
+<msg timestamp="20220723 17:30:25.250" level="DEBUG">Finished Request</msg>
+<msg timestamp="20220723 17:30:25.251" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:24.950" endtime="20220723 17:30:25.251"/>
+</kw>
+<msg timestamp="20220723 17:30:25.251" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20220723 17:30:24.949" endtime="20220723 17:30:25.251"/>
+</kw>
+<status status="PASS" starttime="20220723 17:30:07.197" endtime="20220723 17:30:25.251"/>
+</test>
+<status status="PASS" starttime="20220723 17:29:03.213" endtime="20220723 17:30:25.252"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">duplicado</stat>
+<stat pass="1" fail="0" skip="0">nomeVazio</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="testesCadastrar">testesCadastrar</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
